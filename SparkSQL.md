@@ -1068,5 +1068,205 @@ assert_true(expr) - 如果 expr 不为 true，则报错。
 
 
 
+### [atan](https://spark.apache.org/docs/latest/api/sql/index.html#atan)
+
+atan(expr) - Returns the inverse tangent (a.k.a. arc tangent) of `expr`, as if computed by `java.lang.Math.atan`
+
+atan(expr) - 返回 expr 的反正切 ，类似于 java.lang. Math.atan 计算的结果
+
+**Examples:**
+
+```
+> SELECT atan(0);
+ 0.0
+```
+
+**Since:** 1.4.0
+
+
+
+### [atan2](https://spark.apache.org/docs/latest/api/sql/index.html#atan2)
+
+atan2(exprY, exprX) - Returns the angle in radians between the positive x-axis of a plane and the point given by the coordinates (`exprX`, `exprY`), as if computed by `java.lang.Math.atan2`.
+
+atan2(exprY, exprX) - 返回一个平面的正 x 轴和坐标(exprX，exprY)给出的点之间弧度的角度，就像 java.lang.Math.atan2 计算的那样。
+
+**Arguments:**
+
+- exprY - coordinate on y-axis
+
+- exprX - coordinate on x-axis
+
+  
+
+- Y 轴坐标
+
+- 在 x 轴上的坐标
+
+**Examples:**
+
+```
+> SELECT atan2(0, 0);
+ 0.0
+```
+
+**Since:** 1.4.0
+
+
+
+### [atanh](https://spark.apache.org/docs/latest/api/sql/index.html#atanh)
+
+atanh(expr) - Returns inverse hyperbolic tangent of `expr`.
+
+atanh(expr) - 返回 expr 的反双曲正切。
+
+**Examples:**
+
+```
+> SELECT atanh(0);
+ 0.0
+> SELECT atanh(2);
+ NaN
+```
+
+**Since:** 3.0.0
+
+
+
+### [avg](https://spark.apache.org/docs/latest/api/sql/index.html#avg)
+
+avg(expr) - Returns the mean calculated from values of a group.
+
+avg(expr) - 返回根据组内的值计算出的平均值。
+
+**Examples:**
+
+```
+> SELECT avg(col) FROM VALUES (1), (2), (3) AS tab(col);
+ 2.0
+> SELECT avg(col) FROM VALUES (1), (2), (NULL) AS tab(col);
+ 1.5
+```
+
+**Since:** 1.0.0
+
+
+
+### [base64](https://spark.apache.org/docs/latest/api/sql/index.html#base64)
+
+base64(bin) - Converts the argument from a binary `bin` to a base 64 string.
+
+base64(bin) - 将参数从二进制 bin 转换为以64为基数的字符串。
+
+**Examples:**
+
+```
+> SELECT base64('Spark SQL');
+ U3BhcmsgU1FM
+```
+
+**Since:** 1.5.0
+
+
+
+### [between](https://spark.apache.org/docs/latest/api/sql/index.html#between)
+
+expr1 [NOT] BETWEEN expr2 AND expr3 - evaluate if `expr1` is [not] in between `expr2` and `expr3`.
+
+expr1 [NOT] BETWEEN expr2 AND expr3 - 评估 expr1是否在 expr2和 expr3之间。
+
+**Examples:**
+
+```
+> SELECT col1 FROM VALUES 1, 3, 5, 7 WHERE col1 BETWEEN 2 AND 5;
+ 3
+ 5
+```
+
+**Since:** 1.0.0
+
+
+
+### [bigint](https://spark.apache.org/docs/latest/api/sql/index.html#bigint)
+
+bigint(expr) - Casts the value `expr` to the target data type `bigint`.
+
+bigint(expr) - 将 expr 值转换为目标数据类型 bigint。
+
+**Since:** 2.0.1
+
+
+
+### [bin](https://spark.apache.org/docs/latest/api/sql/index.html#bin)
+
+bin(expr) - Returns the string representation of the long value `expr` represented in binary.
+
+bin(expr) - 返回用二进制表示的long类型的 expr 的字符串表示形式。
+
+**Examples:**
+
+```
+> SELECT bin(13);
+ 1101
+> SELECT bin(-13);
+ 1111111111111111111111111111111111111111111111111111111111110011
+> SELECT bin(13.3);
+ 1101
+```
+
+**Since:** 1.5.0
+
+
+
+### [binary](https://spark.apache.org/docs/latest/api/sql/index.html#binary)
+
+binary(expr) - Casts the value `expr` to the target data type `binary`.
+
+binary(expr) - 将 expr 值转换为二进制目标数据类型。
+
+**Since:** 2.0.1
+
+
+
+### [bit_and](https://spark.apache.org/docs/latest/api/sql/index.html#bit_and)
+
+bit_and(expr) - Returns the bitwise AND of all non-null input values, or null if none.
+
+bit_and(expr) - 返回所有非空输入值的按位 AND，如果没有，返回 null。
+
+**Examples:**
+
+```
+> SELECT bit_and(col) FROM VALUES (3), (5) AS tab(col);
+ 1
+```
+
+**Since:** 3.0.0
+
+
+
+### [bit_count](https://spark.apache.org/docs/latest/api/sql/index.html#bit_count)
+
+bit_count(expr) - Returns the number of bits that are set in the argument expr as an unsigned 64-bit integer, or NULL if the argument is NULL.
+
+bit_count(expr) - 返回参数 expr 中设置为无符号64位整数的位数，如果参数为 NULL，返回 NULL。
+
+**Examples:**
+
+```
+> SELECT bit_count(0);
+ 0
+```
+
+**Since:** 3.0.0
+
+
+
+
+
+
+
+
+
 
 
